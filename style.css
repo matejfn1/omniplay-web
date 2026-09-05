@@ -1,0 +1,201 @@
+:root {
+  --bg-main: #0b0f19;
+  --bg-card: #111827;
+  --bg-row-hover: #1f2937;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --accent-blue: #38bdf8;
+  --accent-purple: #a855f7;
+  --border-color: #1f2937;
+
+  --status-playable: #22c55e;
+  --status-ingame: #eab308;
+  --status-intro: #f97316;
+  --status-loadable: #3b82f6;
+  --status-nothing: #ef4444;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.navbar {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.badge-core {
+  font-size: 0.7rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.discord-btn {
+  background: #5865F2;
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.hero {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  background: radial-gradient(circle at top, #1e1b4b 0%, var(--bg-main) 70%);
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.matrix-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#search-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  width: 300px;
+}
+
+.table-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background: #1f2937;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+tbody tr:hover {
+  background-color: var(--bg-row-hover);
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  background: #1f2937;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent-blue);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.badge.playable { background: rgba(34, 197, 94, 0.15); color: var(--status-playable); border: 1px solid var(--status-playable); }
+.badge.ingame { background: rgba(234, 179, 8, 0.15); color: var(--status-ingame); border: 1px solid var(--status-ingame); }
+.badge.intro { background: rgba(249, 115, 22, 0.15); color: var(--status-intro); border: 1px solid var(--status-intro); }
+.badge.loadable { background: rgba(59, 130, 246, 0.15); color: var(--status-loadable); border: 1px solid var(--status-loadable); }
+.badge.nothing { background: rgba(239, 68, 68, 0.15); color: var(--status-nothing); border: 1px solid var(--status-nothing); }
+
+footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+}
