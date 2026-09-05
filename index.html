@@ -3,71 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniPlay - Native PS3 & PS4 Emulation Engine</title>
+  <title>OmniPlay - PlayStation 3 & PlayStation 4 Emulator</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <span>OmniPlay Core v0.0.1 Open Source Build is now live.</span>
+  </div>
+
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand">
-        <span class="logo-icon">🎮</span>
-        <span class="logo-text">OmniPlay <span class="badge-core">Native Core</span></span>
+        <span class="logo-text">OMNIPLAY</span>
       </div>
       <nav class="nav-links">
-        <a href="#matrix">Matrix</a>
-        <a href="https://github.com/YOUR_USERNAME/omniplay-web" target="_blank" class="github-btn">GitHub Repo</a>
-        <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="discord-btn">Join Discord</a>
+        <a href="#matrix" class="nav-item active">Compatibility</a>
+        <a href="https://github.com/matejfn1/omniplay-web" target="_blank" class="nav-item">GitHub</a>
+        <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="btn-discord">Discord</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>OmniPlay Native Engine</h1>
-      <p>Custom execution core and live compatibility tracker for PS3 and PS4 architecture.</p>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span class="stat-num" id="total-games">0</span>
-          <span class="stat-label">Tracked Titles</span>
+      <h1 class="hero-title">PlayStation 3 & PS4 Compatibility List</h1>
+      <p class="hero-subtitle">Track real-time game playability across the OmniPlay native emulation core.</p>
+
+      <!-- Stat Counters -->
+      <div class="stats-grid">
+        <div class="stat-card playable">
+          <span class="stat-number" id="stat-playable">0</span>
+          <span class="stat-label">Playable</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-num" id="playable-games">0</span>
-          <span class="stat-label">Playable Benchmark</span>
+        <div class="stat-card ingame">
+          <span class="stat-number" id="stat-ingame">0</span>
+          <span class="stat-label">Ingame</span>
+        </div>
+        <div class="stat-card nothing">
+          <span class="stat-number" id="stat-nothing">0</span>
+          <span class="stat-label">Nothing</span>
+        </div>
+        <div class="stat-card total">
+          <span class="stat-number" id="stat-total">0</span>
+          <span class="stat-label">Total Titles</span>
         </div>
       </div>
     </div>
   </section>
 
-  <main class="container" id="matrix">
-    <div class="matrix-header">
-      <h2>Compatibility Database</h2>
-      <input type="text" id="search-input" placeholder="Search by title or ID (e.g. BLES00051)...">
+  <!-- Main Database Container -->
+  <main class="main-container" id="matrix">
+    <div class="controls-bar">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search title name or ID (e.g. BLES01976, CUSA00265)...">
+      </div>
     </div>
 
-    <div class="table-wrapper">
-      <table>
+    <!-- Table -->
+    <div class="table-container">
+      <table class="rpcs3-table">
         <thead>
           <tr>
+            <th>Banner</th>
             <th>Title</th>
             <th>Title ID</th>
-            <th>System</th>
-            <th>Backend Core</th>
+            <th>Platform</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody id="compatibility-table-body">
-          <!-- Populated by script.js -->
+          <!-- Populated dynamically by script.js -->
         </tbody>
       </table>
     </div>
   </main>
 
   <footer>
-    <p>OmniPlay Engine &copy; 2026. Open-source under MIT License.</p>
+    <p>OmniPlay is an open-source project and is not affiliated with Sony Interactive Entertainment.</p>
   </footer>
 
   <script src="script.js"></script>
